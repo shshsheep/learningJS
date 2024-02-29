@@ -1,0 +1,15 @@
+.hd{
+    background-color: rgb(25, 189, 33);
+
+
+}
+
+.hr{
+    background-color: aqua;
+
+}
+
+table,th,td {
+    border: 1px solid black;
+    border-radius: 1px;
+}
