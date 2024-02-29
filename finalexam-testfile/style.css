@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background: #6271a4;
+  /*background-image: url(../homework/img/bg_flower.jpg);*/
+  background-repeat: no-repeat;
+  background-size: 480xp 320px;
+  background-position: center top;
+}
+
+a {
+  color: #df4839;
+}
+a:hover {
+  color: #ff705b;
+  text-decoration: none;
+}
+
+header,nav,footer {
+  text-align: center;
+}
+
+.menu {
+  margin: 0;
+  padding: 5px;
+}
+.menu li {
+  list-style-type: none;
+  display: inline-block;
+  width: 180px;
+  margin: 0 10px;
+}
+.menu a {
+  display: block;
+  padding: 10px;
+  background: #425aa7;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(18, 154, 238, 0.5) inset;
+  transition: 1s;
+}
+.menu a:hover {
+  background: #682323;
+  color: #d0e35b;
+}
+
+h1 {
+  width: 200px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 5px solid #f4f4f4;
+  background-color: #ffffffca;
+  color: rgb(229, 25, 25);
+  font-size: 300%;
+  text-align: center;
+  line-height: 1;
+  border-radius: 50px/30px;
+  text-shadow: -1px -1px 0 #fff,1px 1px #aaa;
+  box-shadow: 0 0 10px rgb(0, 0, 0,0.5);
+  font-family: 'Kdam Thmor Pro', cursive;
+  animation: rgbchange 10s infinite alternate;
+}
+
+.h {
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px dotted #94c8b1;
+  border-left: 10px solid #6271a4;
+  color: #050505;
+  border-radius: 5px 0 0 5px;
+}
+
+
+.h-sub {
+  padding: 10px;
+  background-color: #efedbc;
+  color: #ff705b;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px #ffd0ad inset;
+  animation: fadeln 1s infinite alternate;
+}
+.h-sub span{
+  font-weight: normal;
+}
+#contents {
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 4% 8%;
+  border: 1px solid #2042dd;
+  background-color: #fff;
+}
+
+#car img {
+  width: 60%;
+}
+
+.more {
+  text-align: right;
+}
+.more::after {
+  content: url(img/ico_arrow.png);
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+a[target="_blank"]::after {
+  content: url(img/ico_blank.png);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+a[href^="mailto:"]::after {
+  content: url(img/ico_mail.png);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#contents > section + section {
+  margin-top: 80px;
+}
+
+.imgL {
+  float: left;
+  margin-right: 20px;
+}
+.imgR {
+  float: right;
+  margin-left: 20px;
+}
+.clear {
+  clear: both;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.img-round {
+  border-radius: 50%;
+}
+
+#name{
+    text-shadow: 2px 2px 3px black;
+    color: white;
+}
+
+.scale01:hover{
+    transform: scale(1.5);
+}
+
+@keyframes fadeln{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes rgbchange{
+  0% {background-color: snow; left:0px; top:0px;}
+  25% {background-color: oldlace; left:200px; top:0px;}
+  50% {background-color: moccasin; left:200px; top:200px;}
+  75% {background-color: seashell; left:0px; top:200px;}
+  100%{background-color: snow; left:0px; top:0px;}
+}
+
+.entry{
+    width: 100%;
+    margin-bottom: 30px;
+    border: 2px solid #425aa7;
+    border-collapse: collapse;
+}
+.entry th{
+    width: 8em;
+    background-color: #6271a4ba;
+}
+.entry td{
+    padding: 10px 20px;
+    border: 1px solid #425aa7;
+}
+
+label,input,textarea,select{
+    cursor: pointer;
+}
+
+.btns{
+    text-align: center;
+}
+.btns input{
+    width: 100px;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 1em;
+    -webkit-appearance: none;
+    border-radius: 30px;
+    background-color: #6271a4;
+    color: white;
+    transition: 1s;
+}
+.btns input:hover{
+    background-color: #10a5d7;
+    color: white;
+}
