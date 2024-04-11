@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(221, 160, 183);
+}
+
+#grid{
+    display: grid;
+    background-color: antiquewhite;
+    grid-template-columns: auto;
+    grid-gap: 5px;
+    padding: 15px;
+}
+
+#display{
+    height: 60px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-align: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+button{
+    font-size: 30px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.nuber{
+    background-color: antiquewhite;
+}
+
+.operator{
+    background-color: rgb(165, 203, 240);
+    color: azure;
+}
+
+button:hover{
+    background-color: white;
+    cursor: pointer;
+}
