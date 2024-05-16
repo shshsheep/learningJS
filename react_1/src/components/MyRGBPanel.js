@@ -3,7 +3,8 @@ import { useState } from "react";
 import Mysilder from "./Mysilder";
 
 
-function MyRGBPanel() {
+function MyRGBPanel({ updateBackgroundColor }) {
+
     const panelCSS = {
         display: "flex",
         flexDirection: "column", // Fixed typo in "flexDirection"
@@ -15,13 +16,29 @@ function MyRGBPanel() {
         margin: "auto",
         justifyContent: "center" // camelCase for CSS properties
     };
-    const [r, setRed] = useState(128);
-    const [g, setGreen] = useState(128);
-    const [b, setBlue] = useState(128);
+    const [r, setRed] = useState(100);
+    const [g, setGreen] = useState(150);
+    const [b, setBlue] = useState(200);
 
-    const updateRed = (c) => setRed(c);
-    const updateGreen = (c) => setGreen(c);
-    const updateBlue = (c) => setBlue(c);
+    const updateRed = (c) => {
+        const newR = c + 10;
+        setRed(newR);
+        updateBackgroundColor(newR, g, b); // 使用最新的 r 值
+    };
+
+    const updateGreen = (c) => {
+        const newG = c + 10;
+        setGreen(newG);
+        updateBackgroundColor(r, newG, b); // 使用最新的 g 值
+    };
+
+    const updateBlue = (c) => {
+        const newB = c + 10;
+        setBlue(newB);
+        updateBackgroundColor(r, g, newB); // 使用最新的 b 值
+    };
+
+    
     return(
         <div style={panelCSS}>
              <h3>MyRGBPanel元件</h3>
