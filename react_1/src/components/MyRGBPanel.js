@@ -4,7 +4,6 @@ import Mysilder from "./Mysilder";
 
 
 function MyRGBPanel({ updateBackgroundColor }) {
-
     const panelCSS = {
         display: "flex",
         flexDirection: "column", // Fixed typo in "flexDirection"
@@ -16,26 +15,27 @@ function MyRGBPanel({ updateBackgroundColor }) {
         margin: "auto",
         justifyContent: "center" // camelCase for CSS properties
     };
+    
     const [r, setRed] = useState(100);
     const [g, setGreen] = useState(150);
     const [b, setBlue] = useState(200);
 
     const updateRed = (c) => {
-        const newR = c + 10;
+        const newR = c ;
         setRed(newR);
-        updateBackgroundColor(newR, g, b); // 使用最新的 r 值
+        updateBackgroundColor(255 - newR,255 - g,255 - b); // 使用最新的 r 值
     };
 
     const updateGreen = (c) => {
-        const newG = c + 10;
+        const newG = c ;
         setGreen(newG);
-        updateBackgroundColor(r, newG, b); // 使用最新的 g 值
+        updateBackgroundColor(255 - r, 255- newG,255 - b); // 使用最新的 g 值
     };
 
     const updateBlue = (c) => {
-        const newB = c + 10;
+        const newB = c ;
         setBlue(newB);
-        updateBackgroundColor(r, g, newB); // 使用最新的 b 值
+        updateBackgroundColor(255 - r,255 - g, 255 - newB); // 使用最新的 b 值
     };
 
     
@@ -48,9 +48,9 @@ function MyRGBPanel({ updateBackgroundColor }) {
                 width: "200px",
                 height: "100px"}}
              />
-            <Mysilder label="R" onChange={updateRed} /> 
-            <Mysilder label="G" onChange={updateGreen} /> 
-            <Mysilder label="B" onChange={updateBlue} /> 
+            <Mysilder label="R" value = {r} onChange={updateRed} /> 
+            <Mysilder label="G" value = {g} onChange={updateGreen} /> 
+            <Mysilder label="B" value = {b} onChange={updateBlue} /> 
         </div>
     );
 }
