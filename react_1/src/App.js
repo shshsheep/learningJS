@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import MyRGBPanel from './components/MyRGBPanel';
-import MyCalculator from './components/MyCalculator';
+import MyRGBPanel from './components/RGBPanel/MyRGBPanel';
+import MyCalculator from './components/calculator/MyCalculator';
+import Board from './components/tic-tac-toe/board';
+import TicTacToe from './components/tic-tac-toe/TicTacToe'
 
 function App() {
   const [color, setColor] = useState("rgb(128,128,128)");
@@ -21,6 +23,8 @@ function App() {
         <MyRGBPanel updateBackgroundColor={changeBackgroundColor} />
         <h2>MyCalculator</h2>
         <MyCalculator  />
+        <h2>tic-tac-toe Game</h2>
+        <TicTacToe />
       </header>
     </div>
   );
