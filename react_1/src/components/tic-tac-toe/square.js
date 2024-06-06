@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../../App";
+import './tictactoe.css';
 
 function Square({value,onsquareClick}){
     return(

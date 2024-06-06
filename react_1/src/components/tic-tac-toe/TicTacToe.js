@@ -8,10 +8,25 @@ function TicTacToe(){
     const currentSquares = history[currentMove];
 
     const handleplay = (nextSquares) =>{
-        const nextHistory = [...history.slice(0, currentMove+1), nextSquares]
+        const nextHistory = [...history.slice(0, currentMove+1), nextSquares];
         setHistory(nextHistory);
         setcurrentMove(nextHistory.length - 1);
-    }
+    };
+
+    const moves = history.map((squares, move) => {
+        const jumpTo = (nextMove) => setcurrentMove(nextMove);
+        let description = move > 0 ? `回到第 ${move} 步` : "遊戲開始";
+        // if (move > 0) {
+        //   description = "回到第 " + move + " 步";
+        // } else {
+        //   description = "遊戲開始";
+        // }
+        return <>
+          <li key = {move}>
+            <button onClick={()=> jumpTo(move)}>{description}</button>
+          </li>
+        </>;
+      });
 
     return( 
         <div className="Game">
@@ -19,10 +34,11 @@ function TicTacToe(){
                 <Board xIsNext={xIsNext} squares={currentSquares} onplay={handleplay}/>
             </div>
             <div className='game-info'>
-                <h6>遊戲歷程</h6>
+                <h7>遊戲歷程</h7>
+                <ul>{moves}</ul>
             </div>
         </div>
-    )
+    );
 }
 
 export default TicTacToe;
