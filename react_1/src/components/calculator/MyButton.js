@@ -1,11 +1,24 @@
 import React from 'react';
 import './calculator.css';
 
+/**
+ * `MyButton` 组件：渲染一個带有多個按钮的按钮面板，用於觸發計算機的操作。
+ * @param {Object} props - 组件接收的参数。
+ * @param {Function} props.buttonClicked - 處理按鈕點擊事件的回傳函數。
+ */
+
 function MyButton({buttonClicked}){
-    const handleclick = (e) => {buttonClicked(e.target.value);};
+
+     /**
+     * 處理按鈕點擊事件的內部函數。
+     * @param {Object} e - 事件對象。
+     */
+
+    const handleclick = (e) => {buttonClicked(e.target.value);}; // 調用副组件傳遞的回傳函數，並傳遞按鈕的值。
     return(
         <div className='buttons'>
             <div>
+                 {/* 每個按钮都有相應的 class 和點擊事件 */}
                 <button className='btn btn-action' onClick={handleclick} value="c">C</button>
                 <button className='btn btn-action' onClick={handleclick} value="+/-">+/-</button>
                 <button className='btn btn-action' onClick={handleclick} value="%">%</button>
